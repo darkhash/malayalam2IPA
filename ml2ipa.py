@@ -17,7 +17,7 @@ class IPAMap:
 		self.charCount = len(charlist)
 		for index,char in enumerate(charlist):
 			print "dsfasdf==>", index+1, char
-			if (char.encode("utf-8") in self.consonants) and ( (index+1 < self.charCount) and (charlist[index+1] not in self.matraa)):
+			if (char.encode("utf-8") in self.consonants) and ( (index+1 < self.charCount) and (charlist[index+1].encode("utf-8") not in self.matraa)):
 				print "3------------>", char, self.charDict.get(char.encode("utf-8"),'#'), 'ə'
 				self.ipalist.append(self.charDict.get(char.encode("utf-8"),'#'))
 				self.ipalist.append('ə')
