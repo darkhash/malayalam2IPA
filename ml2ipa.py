@@ -18,15 +18,15 @@ class IPAMap:
 		for index,char in enumerate(charlist):
 			print "dsfasdf==>", index+1, char
 			if (char in self.conuni) and ( (charlist.index(char)+1 < self.charCount) and (charlist[index+1] not in self.maarauni)):
-				print "3------------>", char, self.charDict[char], 'ə'
+				print "3------------>", char, self.charDict.get(char,'#'), 'ə'
 				self.ipalist.append(self.charDict.get(char,'#'))
 				self.ipalist.append('ə')
 			elif char in self.conuni and index+1 == self.charCount:
-				print "2---->", char, self.charDict[char], 'ə'
+				print "2---->", char, self.charDict.get(char,'#'), 'ə'
 				self.ipalist.append(self.charDict.get(char,'#'))
 				self.ipalist.append('ə')
 			else:
-				print char, self.charDict[char]
+				print char, self.charDict.get(char,'#')
 				self.ipalist.append(self.charDict.get(char,'#'))
 		
 		print "result---->", "".join(self.ipalist)
