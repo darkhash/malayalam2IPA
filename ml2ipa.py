@@ -17,7 +17,7 @@ class IPAMap:
 		self.charCount = len(charlist)
 		for index,char in enumerate(charlist):
 			print "dsfasdf==>", index+1, char
-			if (char in self.conuni) and ( (charlist.index(char)+1 < self.charCount) and (charlist[index+1] not in self.maarauni)):
+			if (char in self.conuni) and ( (index+1 < self.charCount) and (charlist[index+1] not in self.maarauni)):
 				print "3------------>", char, self.charDict.get(char,'#'), 'ə'
 				self.ipalist.append(self.charDict.get(char,'#'))
 				self.ipalist.append('ə')
