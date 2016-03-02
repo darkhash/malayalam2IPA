@@ -16,23 +16,25 @@ class IPAMap:
 		charlist = [char for char in self.string.decode("utf-8")]
 		self.charCount = len(charlist)
 		for char in charlist:
-			print "dsfasdf==>", charlist.index(char)+1
+			#print "dsfasdf==>", charlist.index(char)+1
 			if char in self.conuni and (charlist.index(char)+1 < self.charCount and charlist[charlist.index(char)+1] not in self.maarauni):
-				print char, self.charDict[char], 'ə'
+				#print char, self.charDict[char], 'ə'
 				self.ipalist.append(self.charDict[char])
 				self.ipalist.append('ə')
 			elif char in self.conuni and charlist.index(char)+1 == self.charCount:
-				print char, self.charDict[char], 'ə'
+				#print char, self.charDict[char], 'ə'
 				self.ipalist.append(self.charDict[char])
 				self.ipalist.append('ə')
 			else:
-				print char, self.charDict[char]
+				#print char, self.charDict[char]
 				self.ipalist.append(self.charDict[char])
-		print self.ipalist
+		
+		print "".join(self.ipalist)
 
 
 if(len(sys.argv) < 2):
-	print "Usage: sys.argv[0] string"
+	print 'Usage: python '+sys.argv[0] +' string'
+	sys.exit(1)
 
 map = IPAMap(sys.argv[1])
 map.splitString()
